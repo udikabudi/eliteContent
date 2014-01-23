@@ -63,7 +63,8 @@ var parse = function (method, data, callback)
                   break;
               case ADD_ITEMS_LIST:
                    jsonResponseDataPost.header = ADD_ITEMS_LIST;
-                   dbHelper.saveListOfItems(data.items, function(itemsNotSavedFlag, err){
+                     var items =  JSON.parse(data.items);
+                   dbHelper.saveListOfItems(items, function(itemsNotSavedFlag, err){
                        if (err){
                            jsonResponseDataPost.ok = "0";
                        }

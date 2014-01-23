@@ -89,7 +89,7 @@ exports.saveListOfItems = function(items, callback)
 var callbackToAddSongArray = function  (err, item){
             if (err)
             {
-                console.log("totoDbHelper", "question couldn't save to db " + err + item);
+                console.log( "question couldn't save to db " + err + item);
                 itemsNotSavedFlag++;
             }
 };
