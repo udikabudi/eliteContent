@@ -1,13 +1,17 @@
 {
-  "name": "chat-example",
-  "version": "0.0.0",
-  "description": "A chat example to showcase how to use `socket.io` with a static `express` server",
+  "name": "radio-israel",
+  "version": "0.0.1",
+  "description": "radio israel",
   "main": "server.js",
   "repository": "",
-  "author": "Mostafa Eweda <mostafa@c9.io>",
+  "author": "udi kabudi",
   "dependencies": {
     "async": "~0.2.8",
     "express": "~3.2.4",
-    "socket.io": "~0.9.14"
+    "socket.io": "~0.9.14",
+    "mongoose": "3.8.1"
+  },
+  "engines": {
+    "node": "0.10.24"
   }
 }
