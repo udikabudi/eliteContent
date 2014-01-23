@@ -43,9 +43,9 @@ var items  = mongoose.model('items', itemsSchema);
 
 
 exports.getNextItem = function (callback){
-   items.findRandom(function (err, item) {
+    items.findOne({name: "item"}, function (err, item) {
        if (err){
-           
+            console.log("dbHelper, getNextItem, error" + err);
            callback(err, -1);
        }
        else {
@@ -59,8 +59,27 @@ exports.getNextItem = function (callback){
            }
        }
    } );
-      
 };
+    
+    
+//   items.findRandom(function (err, item) {
+//       if (err){
+//             console.log("dbHelper, getNextItem, error" + err);
+//           callback(err, -1);
+//       }
+//       else {
+//           if (item !== null){
+//             console.log("dbHelper, getNextItem, found an item" + item);
+//           callback(err, item);
+//           }
+//           else {
+//               console.log("dbHelper, getNextItem, found an item and he is null" + item);
+//               callback(err, -1);
+//           }
+//       }
+//   } );
+      
+// };
     
 
 var itemsNotSavedFlag;
