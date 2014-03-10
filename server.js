@@ -114,6 +114,11 @@ my_http.createServer(function(request,response){
         }
         else
         {
+            //redirect
+            response.writeHead(302, {
+              'Location': './index.html'
+              //add other headers here...
+            });
             console.log("request undefined");
             response.write("request undefined");
             response.end();
