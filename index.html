@@ -20,8 +20,8 @@ function myFunction()
 {
     console.log("button clicked");
 	var data = "header=test";
-	$.post("http://testflayvr.herokuapp.com/",data,function(data,status,xhr) {
-	    console.log(data);
+	$.get("server.js",function(data,status){
+         alert("Data: " + data + "\nStatus: " + status);
 	});
 }
 
