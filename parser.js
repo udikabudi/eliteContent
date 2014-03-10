@@ -75,7 +75,7 @@ var parse = function (method, data, callback)
                    });
                    break;
              case "test":
-                       console.log("test worked");
+                       callback("test worked");
                        break;
             
             default:
