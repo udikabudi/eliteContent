@@ -20,7 +20,7 @@ function myFunction()
 {
     console.log("button clicked");
 	var data = "header=test";
-	$.get("server.js",function(data,status){
+	$.post("server.js",data, function(data,status){
          alert("Data: " + data + "\nStatus: " + status);
 	});
 }
