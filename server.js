@@ -115,16 +115,30 @@ my_http.createServer(function(request,response){
         else
         {
             //redirect
-            response.writeHead(302, {
-              'Location': './index.html'
-              //add other headers here...
-            });
+            var ext = path.extname("index.html");
+           getFile("./index.html",response,ext);
             console.log("request undefined");
-            response.write("request undefined");
-            response.end();
+            // response.write("request undefined");
+            // response.end();
         }
   }
-}).listen(process.env.PORT);  
+}).listen(process.env.PORT); 
+
+var path = require("path"); 
+var fs = require("fs"); 
+function getFile(localPath, res, mimeType) {
+	fs.readFile(localPath, function(err, contents) {
+		if(!err) {
+			res.setHeader("Content-Length", contents.length);
+			res.setHeader("Content-Type", mimeType);
+			res.statusCode = 200;
+			res.end(contents);
+		} else {
+			res.writeHead(500);
+			res.end();
+		}
+	});
+}
 
 
 
