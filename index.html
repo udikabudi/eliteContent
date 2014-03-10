@@ -5,7 +5,7 @@
 </head>
  <header>
    
-    <h1>רדיו אינדי ישראל!</h1>
+    <h1>Test Test</h1>
   
    
   </header>
@@ -16,10 +16,13 @@
 <script>
 
 //call list of songs depend on the button pressed
-function genreClicked(genre)
+function myFunction()
 {
-	
-	$("p.headline").text(genre);
+    console.log("button clicked");
+	var data = "header=test";
+	$.post("./server.js",data,function(data,status,xhr) {
+	    console.log(data);
+	});
 }
 
 
@@ -42,41 +45,10 @@ songs[1] = "MorningMrMagpie";
     
 </script>
 
-<div class="genres">
-<div class="title">
-<div class="imgae">
-<img src="./rock.jpg" class="headlineImg" height="30px" width="30px"  >
-</div>
-<div class="textTitle">
-<p class="headline">כאן יהיה השם של הז'אנר </p>
-<p class="subtitle" >כאן תהיה תת כותרת</p>
-</div>
-</div>
-<button class="genreButton" onclick="genreClicked('רוק')">רוק</button> </br>
-<button class="genreButton" onclick="genreClicked('פופ')">פופ</button></br>
-<button class="genreButton" onclick="genreClicked('ים תיכוני')">ים תיכוני</button></br>
-<button class="genreButton" onclick="genreClicked('מזרחי')">מזרחי</button></br>
-<button class="genreButton" onclick="genreClicked('אינדי')">אינדי</button></br>
-</div>
-
-
-<div class="audioDiv">
-<audio id="audio" controls="controls">
-    <source id="oggSource" src="" type="audio/ogg"></source>
-    <source id="mp3Source" type="audio/mp3"></source>
-    Your browser does not support the audio format.
-</audio>
-
-<button onclick="updateSource();">raffle</button>
-<span id="song_name"> hereismytext </span>
-</div>
-
-
-
-
 </body>
 
-
+<h2>Test Test Test</h2>
+<<button type="button" onclick="myFunction()">Click Me!</button>
 
 
 </html>

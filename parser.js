@@ -74,6 +74,9 @@ var parse = function (method, data, callback)
                        callback(jsonResponseDataPost);
                    });
                    break;
+             case "test":
+                       console.log("test worked");
+                       break;
             
             default:
                 jsonResponseDataPost.ok = "0";
