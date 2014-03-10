@@ -64,7 +64,7 @@ my_http.createServer(function(request,response){
                     response.writeHead(
                     200,
                     {
-                        "access-control-allow-origin": origin,
+                        //"access-control-allow-origin": origin,
                         "content-type": "text/plain",
                     }
                 );
