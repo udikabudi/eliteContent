@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+<link href="./style.css" rel="stylesheet">
+</head>
+ <header>
+   
+    <h1>רדיו אינדי ישראל!</h1>
+  
+   
+  </header>
+  
+  
+<body>
+
+<script>
+
+//call list of songs depend on the button pressed
+function genreClicked(genre)
+{
+	
+	$("p.headline").text(genre);
+}
+
+
+var songs = [];
+songs[0] = "01_Bloom.ogg";
+songs[1] = "MorningMrMagpie";
+  function updateSource()
+    { 
+        var random  = Math.floor(Math.random() * 2) + 0;
+       
+        document.getElementById("song_name").innerHTML=songs[random];
+      
+        var audio = document.getElementById('audio');
+        var source = document.getElementById('oggSource');
+        source.src= songs[random];
+        audio.load();
+        audio.play();
+    }
+</script>
+
+<div class="genres">
+<div class="title">
+<div class="imgae">
+<img src="./rock.jpg" class="headlineImg" height="30px" width="30px"  >
+</div>
+<div class="textTitle">
+<p class="headline">כאן יהיה השם של הז'אנר </p>
+<p class="subtitle" >כאן תהיה תת כותרת</p>
+</div>
+</div>
+<button class="genreButton" onclick="genreClicked('רוק')">רוק</button> </br>
+<button class="genreButton" onclick="genreClicked('פופ')">פופ</button></br>
+<button class="genreButton" onclick="genreClicked('ים תיכוני')">ים תיכוני</button></br>
+<button class="genreButton" onclick="genreClicked('מזרחי')">מזרחי</button></br>
+<button class="genreButton" onclick="genreClicked('אינדי')">אינדי</button></br>
+</div>
+
+
+<div class="audioDiv">
+<audio id="audio" controls="controls">
+    <source id="oggSource" src="" type="audio/ogg"></source>
+    <source id="mp3Source" type="audio/mp3"></source>
+    Your browser does not support the audio format.
+</audio>
+
+<button onclick="updateSource();">raffle</button>
+<span id="song_name"> hereismytext </span>
+</div>
+
+
+
+
+</body>
+
+
+
+
+</html>
